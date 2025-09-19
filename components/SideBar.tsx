@@ -164,3 +164,39 @@ export default Sidebar;
 // The user is on any sub-page of that section"
 // This creates a smart navigation system where the main section stays highlighted even when you're deep in sub-pages! 🎯
 
+
+
+
+
+
+
+// 🔍 Think of it Like This
+// Imagine you have 4 buttons on your sidebar:
+
+// Home Button → Goes to /
+// Previous Button → Goes to /previous
+// Recordings Button → Goes to /recordings
+// Personal Room Button → Goes to /personal-room
+// When the user is on /recordings/meeting-123, the code asks:
+
+// "Should I highlight the Home button?" → NO
+// "Should I highlight the Previous button?" → NO
+// "Should I highlight the Recordings button?" → YES (because URL starts with /recordings)
+// "Should I highlight the Personal Room button?" → NO
+
+
+// 🔄 How the Loop Works
+
+// {sidebarLinks.map((item) => {
+//   // This runs 4 times - once for each sidebar link!
+//   const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
+  
+//   return (
+//     <Link href={item.route} key={item.label}>
+//       // Link content
+//     </Link>
+//   );
+// })}
+
+// The sidebar component loops through ALL links and checks each one:
+
