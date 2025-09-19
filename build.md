@@ -59,3 +59,10 @@ first we need a compone t meetying type list which will render the 4 meetings av
 
 HOME CARD COMPONENT IS THE SINGLE CARD ELEMENT ( wo jo chaar card redner ho rhe h uska reusable compone thome card with logo desc time nd all) 
 meeting type list wo compone t h jo jo 4 card ko list kreag map homecard ko 
+
+
+
+now when we click on any card like new meeting in zoom a new modal opens up 
+in all card same 
+so next step is to make meeting modal component
+and to build a modla we use dialog comp of shadcn
