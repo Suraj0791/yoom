@@ -66,3 +66,76 @@ now when we click on any card like new meeting in zoom a new modal opens up
 in all card same 
 so next step is to make meeting modal component
 and to build a modla we use dialog comp of shadcn
+
+MeetingTypeList (Parent)
+    ↓ (manages state & passes props)
+HomeCard (Child) × 4
+    ↓ (triggers state changes)
+MeetingModal (Sibling)
+    ↓ (renders based on state)
+Dialog (UI Component)
+
+
+🔄 Complete User Flow Examples
+Scenario 1: User Wants Instant Meeting
+Step 1: User Action
+// User clicks "New Meeting" card
+<HomeCard handleClick={() => setMeetingState('isInstantMeeting')} />
+
+Step 2: State Change
+// State updates from undefined to 'isInstantMeeting'
+meetingState = 'isInstantMeeting'
+
+Step 3: Modal Renders
+// Somewhere in MeetingTypeList (you haven't shown this part yet)
+{meetingState === 'isInstantMeeting' && (
+  <MeetingModal
+    isOpen={true}
+    onClose={() => setMeetingState(undefined)}
+    title="Start an Instant Meeting"
+    handleClick={startInstantMeeting}
+    buttonText="Start Meeting"
+  />
+)}
+
+
+User clicks HomeCard
+        ↓
+handleClick() executes
+        ↓
+setMeetingState('specific-type')
+        ↓
+Component re-renders
+        ↓
+Modal opens with:
+- isOpen = true
+- title = specific title
+- handleClick = specific action
+- children = specific form/content
+        ↓
+User interacts with modal
+        ↓
+Either:
+- handleClick() → perform action
+- onClose() → close modal
+
+
+🚀 Key Benefits of This Pattern
+1. 🎯 Single Responsibility
+MeetingTypeList: Manages state & layout
+HomeCard: Handles click events
+MeetingModal: Displays content
+2. 🔄 Reusability
+Same MeetingModal for all meeting types
+Just pass different props
+3. 🎨 Consistency
+All modals look the same
+Same UX patterns
+4. 🛠️ Maintainability
+Easy to add new meeting types
+Centralized modal logic
+
+
+
+next is to setup stream for video calls 
+for stream see dedicated stream guide
