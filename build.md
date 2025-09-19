@@ -33,3 +33,18 @@ User taps hamburger to open side menu
 User sees same navigation options
 User taps link → menu closes + navigates
 Only exact page is highlighted (simpler)
+
+
+
+
+after building navbar sidebar basic layout skeletion folder of the app , we will now move to clekr 
+setup clekr
+add signin signup comp 
+now add middlware and in middleware add protetcted routes also
+
+
+after setting clerk component , we wont use the clerk signup signin ui we want our own ui 
+so in env we will add two varibale next publci clerk signin url nd signup url that is telling clerk ki where to go when 
+someone try to sign in 
+
+and in (auth) folder inside we got we crrate two pages sign-in amnd sign-up page
