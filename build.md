@@ -48,3 +48,14 @@ so in env we will add two varibale next publci clerk signin url nd signup url th
 someone try to sign in 
 
 and in (auth) folder inside we got we crrate two pages sign-in amnd sign-up page
+
+
+next we build home page of the root 
+home page has sidebar navbar 4 different card in middle like new meeting  join meeting schdeule meeting virew recording 
+then below todays upcoming meeting and card so like this is the homepgae
+we need different compoenents 
+
+first we need a compone t meetying type list which will render the 4 meetings available i mean these 4 different card in middle like new meeting  join meeting schdeule meeting virew recording 
+
+HOME CARD COMPONENT IS THE SINGLE CARD ELEMENT ( wo jo chaar card redner ho rhe h uska reusable compone thome card with logo desc time nd all) 
+meeting type list wo compone t h jo jo 4 card ko list kreag map homecard ko 
