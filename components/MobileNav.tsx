@@ -72,3 +72,35 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
+
+
+// How Sheet Works:
+// SheetTrigger: The hamburger icon that opens menu
+// SheetContent: The sliding panel that appears
+// side="left": Panel slides in from left side
+// sm:hidden: Hamburger only visible on small screens
+
+// Active Link Logic:
+// isActive = pathname === item.route || pathname.startsWith(item.route + '/')
+// This highlights the link if you're on that page or any subpage   
+
+
+// 🍔 Hamburger Icon
+
+// CSS Breakdown:
+// cursor-pointer: Shows hand cursor on hover
+// sm:hidden: Hidden on screens 640px and above
+// 36x36px: Bigger than desktop icons (easier to tap)
+
+// 🔄 User Experience Flow
+// Desktop Experience:
+// User sees fixed navbar at top
+// User sees sidebar on left
+// User clicks sidebar links to navigate
+// Active states show current section
+// Mobile Experience:
+// User sees navbar with hamburger icon
+// User taps hamburger to open side menu
+// User sees same navigation options
+// User taps link → menu closes + navigates
+// Only exact page is highlighted (simpler)
