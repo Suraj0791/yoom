@@ -115,3 +115,13 @@ Result: Same user in both systems! 🎯
 5. Browser: Uses token for video calls
    ↓
 6. Stream: "Token is valid, allow access!"
+
+
+
+
+
+now when u done with client provider and stream server action token provider 
+we will wrap our application i mean layout .tsx with this client provider so now our whole app knows about the stream user nd video
+
+now we will move to meetingtypelist  page again and complete the fucntion crerate meeting there 
+

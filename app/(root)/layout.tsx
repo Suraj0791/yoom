@@ -1,7 +1,13 @@
-import React from "react";
+import { ReactNode } from 'react';
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return <main>{children}</main>;
+import StreamVideoProvider from '@/providers/StreamClientProvider';
+
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+  return (
+    <main>
+      <StreamVideoProvider>{children}</StreamVideoProvider>
+    </main>
+  );
 };
 
 export default RootLayout;
