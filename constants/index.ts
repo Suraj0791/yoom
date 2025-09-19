@@ -1,23 +1,23 @@
-export const sideBarLinks=[
+export const sidebarLinks=[
     {
         label : 'Home',
-        imgUrl :'icons/home.svg',
+        imgURL :'icons/home.svg',
         route : '/'
     },
         {
         label : 'Previous',
-        imgUrl :'icons/previous.svg',
+        imgURL :'icons/previous.svg',
         route : '/previous'
     },
         {
         label : 'Recordings',
-        imgUrl :'icons/Video.svg',
+        imgURL :'icons/Video.svg',
         route : '/recordings'
     },
 
          {
         label : 'Personal Room',
-        imgUrl :'icons/add-personal.svg',
+        imgURL :'icons/add-personal.svg',
         route : '/personal-room'
     },
 
