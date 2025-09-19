@@ -1,13 +1,21 @@
 import React from 'react'
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main>
-        navbar
-        {children}
+    <main className='relative'>
+        Navbar
+        <div className='flex'>
+            Sidebar
+            <section className='flex min-h-screen flex-1 flex-col px-6 pb-4 pt-28 max-md: pb-14 sm:px-14'>
+
+                <div className='w-full '>
+                    {children}
+                </div>
+            </section>
+        </div>
         footer
     </main>
   )
 }
 
-export default RootLayout
+export default HomeLayout
