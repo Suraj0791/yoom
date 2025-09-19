@@ -2,9 +2,12 @@ import React from 'react'
 
 const SideBar = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='w-64 bg-gray-200 p-4'
+    >
+        <div>
+            
+        </div>
+        </section>
   )
 }
 
