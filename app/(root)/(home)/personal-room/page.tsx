@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useGetCallById } from "@/hooks/useGetCallById";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { CopyLinkButton } from "@/components/CopyLinkButton";
 
 const Table = ({
   title,
@@ -64,20 +65,21 @@ const PersonalRoom = () => {
         <Table title="Invite Link" description={meetingLink} />
       </div>
       <div className="flex gap-5">
-        <Button className="bg-blue-1" onClick={startRoom}>
+        <Button
+          className="bg-blue-1 hover:bg-blue-600 transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center gap-2"
+          onClick={startRoom}
+        >
+          <span>🎥</span>
           Start Meeting
         </Button>
-        <Button
-          className="bg-dark-3"
-          onClick={() => {
-            navigator.clipboard.writeText(meetingLink);
-            toast({
-              title: "Link Copied",
-            });
-          }}
-        >
-          Copy Invitation
-        </Button>
+        <CopyLinkButton
+          link={meetingLink}
+          buttonText="Copy Invitation"
+          successTitle="🏠 Personal Room Link Copied!"
+          successDescription="Share your personal meeting room link. This link never changes and is always available."
+          className="bg-dark-3 hover:bg-dark-2"
+          variant="secondary"
+        />
       </div>
     </section>
   );

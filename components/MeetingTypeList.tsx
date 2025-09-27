@@ -138,7 +138,13 @@ const MeetingTypeList = () => {
           title="Meeting Created"
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
-            toast({ title: "Link Copied" });
+            toast({
+              title: "📅 Scheduled Meeting Link Copied!",
+              description:
+                "Share this link with participants. They can join at the scheduled time.",
+              variant: "default",
+              duration: 3000,
+            });
           }}
           image={"/icons/checked.svg"}
           buttonIcon="/icons/copy.svg"
@@ -188,9 +194,15 @@ const MeetingTypeList = () => {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(meetingLink);
-                  toast({ title: "Link Copied! Share it with participants." });
+                  toast({
+                    title: "🎉 Meeting Link Copied!",
+                    description:
+                      "Share this link with participants to invite them to your meeting.",
+                    variant: "default",
+                    duration: 3000,
+                  });
                 }}
-                className="flex items-center justify-center gap-2 rounded-lg bg-blue-1 px-4 py-2 text-white hover:bg-blue-600 transition-colors"
+                className="flex items-center justify-center gap-2 rounded-lg bg-blue-1 px-4 py-2 text-white hover:bg-blue-600 transition-all duration-200 transform hover:scale-105 active:scale-95"
               >
                 <Image
                   src="/icons/copy.svg"
@@ -205,7 +217,7 @@ const MeetingTypeList = () => {
                   setMeetingState(undefined);
                   router.push(`/meeting/${callDetail?.id}`);
                 }}
-                className="flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700 transition-colors"
+                className="flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700 transition-all duration-200 transform hover:scale-105 active:scale-95"
               >
                 <Image
                   src="/icons/Video.svg"
