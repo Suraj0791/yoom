@@ -139,3 +139,7 @@ Centralized modal logic
 
 next is to setup stream for video calls 
 for stream see dedicated stream guide
+
+after setting of stream client provider nd stream action token provider nd wrpping the layout with them and creatinga  fucntion crerate meeting inside meeting type list 
+u would have seen as we clicke join meeting or create meeting before joining there is kind of a hold state for camera check mic check nd all 
+lets build that 
