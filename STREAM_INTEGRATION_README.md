@@ -212,25 +212,26 @@ const MeetingTypeList = () => {
   // 🎬 THE CORE MEETING CREATION FUNCTION
   const createMeeting = async () => {
     if (!client || !user) return; // ❌ Exit if no client or user
-    
+
     try {
       // 🔍 Validate date/time
       if (!values.dateTime) {
-        toast({ title: 'Please select a date and time' });
+        toast({ title: "Please select a date and time" });
         return;
       }
-      
+
       // 🎲 Generate unique meeting ID
       const id = crypto.randomUUID();
-      
+
       // 🏭 Create Stream call object
-      const call = client.call('default', id);
-      if (!call) throw new Error('Failed to create meeting');
-      
+      const call = client.call("default", id);
+      if (!call) throw new Error("Failed to create meeting");
+
       // ⏰ Set meeting start time
-      const startsAt = values.dateTime.toISOString() || new Date(Date.now()).toISOString();
-      const description = values.description || 'Instant Meeting';
-      
+      const startsAt =
+        values.dateTime.toISOString() || new Date(Date.now()).toISOString();
+      const description = values.description || "Instant Meeting";
+
       // 🚀 Create the meeting on Stream servers
       await call.getOrCreate({
         data: {
@@ -240,25 +241,25 @@ const MeetingTypeList = () => {
           },
         },
       });
-      
+
       setCallDetail(call); // ✅ Save call details
-      
+
       // 📍 Navigate to meeting room if instant meeting
       if (!values.description) {
         router.push(`/meeting/${call.id}`);
       }
-      
-      toast({ title: 'Meeting Created' });
+
+      toast({ title: "Meeting Created" });
     } catch (error) {
       console.error(error);
-      toast({ title: 'Failed to create Meeting' });
+      toast({ title: "Failed to create Meeting" });
     }
   };
 
   if (!client || !user) return <Loader />; // ⏳ Wait for setup
 
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
-  
+
   // ... HomeCard components
 };
 ```
@@ -342,7 +343,7 @@ router.push(`/meeting/${call.id}`) // Navigate to meeting room
 
 // 2. client.call(type, id) - Stream Method
 //    Purpose: Create or reference a call object
-//    Parameters: 
+//    Parameters:
 //      - type: 'default' (call type)
 //      - id: unique meeting ID
 //    Returns: Call object
@@ -371,6 +372,7 @@ router.push(`/meeting/${call.id}`) // Navigate to meeting room
 ## 🎬 **Meeting Creation Types & Flows**
 
 ### **Type 1: Instant Meeting**
+
 ```typescript
 // User Flow:
 // 1. Click "New Meeting" → setMeetingState('isInstantMeeting')
@@ -385,6 +387,7 @@ const handleInstantMeeting = () => {
 ```
 
 ### **Type 2: Scheduled Meeting**
+
 ```typescript
 // User Flow:
 // 1. Click "Schedule Meeting" → setMeetingState('isScheduleMeeting')
@@ -401,6 +404,7 @@ const handleScheduleMeeting = () => {
 ```
 
 ### **Type 3: Join Meeting**
+
 ```typescript
 // User Flow:
 // 1. Click "Join Meeting" → setMeetingState('isJoiningMeeting')
@@ -414,6 +418,7 @@ const handleJoinMeeting = (meetingId: string) => {
 ```
 
 ### **Type 4: View Recordings**
+
 ```typescript
 // User Flow:
 // 1. Click "View Recordings" → Direct navigation
@@ -421,7 +426,7 @@ const handleJoinMeeting = (meetingId: string) => {
 // 3. Navigate to recordings page
 
 const handleViewRecordings = () => {
-  router.push('/recordings'); // Simple navigation
+  router.push("/recordings"); // Simple navigation
 };
 ```
 
