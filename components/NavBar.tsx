@@ -4,7 +4,7 @@ import { SignedIn, UserButton } from '@clerk/nextjs';
 
 import MobileNav from './MobileNav';
 
-const Navbar = () => {
+const NavBar = () => {
   return (
 
 //     flex-between: Custom class (likely justify-between items-center)
@@ -49,4 +49,4 @@ Result: Clean logo + brand name combination */}
   );
 };
 
-export default Navbar;
+export default NavBar;

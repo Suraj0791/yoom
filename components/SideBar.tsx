@@ -17,7 +17,7 @@ cn() function: Combines clsx + tailwind-merge for conditional styling
 
 
 
-const Sidebar = () => {
+const SideBar = () => {
   const pathname = usePathname();  // Get current route
 
   return (
@@ -79,7 +79,7 @@ max-sm:hidden: Hidden on mobile devices (responsive design)
   );
 };
 
-export default Sidebar;
+export default SideBar;
 
 
 
